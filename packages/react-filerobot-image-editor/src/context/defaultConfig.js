@@ -97,7 +97,7 @@ export default {
   forceToPngInEllipticalCrop: false,
   useBackendTranslations: true,
   translations: null,
-  language: 'en',
+  language: 'ch',
   avoidChangesNotSavedAlertOnLeave: false,
   loadableDesignState: null,
   moreSaveOptions: [],
