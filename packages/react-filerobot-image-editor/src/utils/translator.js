@@ -1,19 +1,24 @@
 /* eslint-disable no-console */
 /** Internal Dependencies */
 import defaultTranslations from 'context/defaultTranslations';
+import defaultTranslations_ch from 'context/defaultTranslations_ch';
+
 import { TRANSLATIONS_GRID_UUID } from './constants';
 
 const backendTranslations = {};
+backendTranslations.en = defaultTranslations;
+backendTranslations.ch = defaultTranslations_ch;
+
 const activatedTranslations = { ...defaultTranslations };
 
 const hardcodedErrorMsg = 'Error while loading translations from backend.';
 
-export const updateTranslations = (newTranslations = {}, language = 'en') =>
+export const updateTranslations = (language = 'en') => {
   Object.assign(
     activatedTranslations,
     backendTranslations?.[language?.toLowerCase()] || {},
-    newTranslations,
   );
+};
 
 const sendMissingTranslationsToBackend = (missingTranslations = []) =>
   new Promise((resolve, reject) => {

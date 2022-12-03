@@ -1,5 +1,5 @@
 /** External Dependencies */
-import  React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@scaleflex/ui/theme/hooks/use-theme';
 
@@ -37,8 +37,8 @@ const AppProvider = ({ children, config = {} }) => {
   );
 
   useEffect(() => {
-    updateTranslations(config.translations, config.language);
-  }, [config.useBackendTranslations, config.language, config.translations]);
+    updateTranslations(config.language);
+  }, [config.language]);
 
   const theme = useTheme();
   const providedValue = useMemo(
