@@ -36,9 +36,9 @@ const EXAMPLE_CODE_TABS = {
 };
 
 const DEFAULT_IMAGES_SRCS = [
-  'https://scaleflex.cloudimg.io/v7/demo/river.png?w=100',
-  'https://scaleflex.cloudimg.io/v7/demo/spencer-davis-unsplash.jpg?w=100',
-  'https://scaleflex.cloudimg.io/v7/demo/damian-markutt-unsplash.jpg?w=100',
+  'https://images-1307121509.cos.ap-beijing.myqcloud.com/souJpg/images/cnxLfVasJJA3VmpYi5d6P9.jpg',
+  'https://images-1307121509.cos.ap-beijing.myqcloud.com/souJpg/images/DwuZYKT82Ly3F3a4pP6YxR.jpg',
+  'https://images-1307121509.cos.ap-beijing.myqcloud.com/souJpg/images/KRVmdSsRi6iJHf7NsVgVAJ.jpg',
 ];
 
 const selectedTabs = [
