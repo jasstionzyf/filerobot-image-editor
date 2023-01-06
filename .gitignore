@@ -6,7 +6,7 @@ package-lock.json
 # Editor folders
 .cache
 .eslintCache
-.vscode
+# .vscode
 .idea
 
 # production

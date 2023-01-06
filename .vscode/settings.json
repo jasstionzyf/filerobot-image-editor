@@ -1,0 +1,93 @@
+{
+  "scm.inputFontSize": 18,
+  "markdown.preview.fontSize": 18,
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.localEchoStyle": "dim",
+  "redhat.telemetry.enabled": false,
+  "git.autofetch": true,
+  "xml.java.home": "D:\\\\apps\\\\jdk11",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "git.enableSmartCommit": true,
+  "terminal.integrated.inheritEnv": false,
+  "workbench.preferredHighContrastColorTheme": "Tomorrow Night Blue",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontSize": 10,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitHistory.alwaysPromptRepositoryPicker": true,
+  "window.experimental.windowControlsOverlay.enabled": true,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "window.commandCenter": true,
+  "workbench.colorTheme": "JetBrains Darcula Theme",
+  "vsintellicode.features.apiExamples": "enabled",
+  "vsintellicode.features.apiExamplests": "enabled",
+  "vsintellicode.features.python.deepLearning": "enabled",
+  "python.formatting.provider": "black",
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "off",
+  "pylint.logLevel": "off",
+  "editor.formatOnType": true,
+  "tabnine.experimentalAutoImports": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "git.confirmSync": false,
+  "sync.gist": "ed67e58ccd71b05cd6da57799d60766a",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.linting.flake8CategorySeverity.E": "Information",
+  "python.linting.flake8CategorySeverity.F": "Information",
+  "python.linting.pylintArgs": ["--enable=W0614"],
+  "window.zoomLevel": 1,
+  "autoflake-extension.remove-unused-variables": true,
+  "autoflake.path": "/data/apps/miniconda3/envs/modelInfer/bin/autoflake",
+  "autoflake.removeAllUnusedVariables": true,
+  "autoflake.removeDuplicateKeys": true,
+  "autoflake.sortImports": true,
+  "java.saveActions.organizeImports": true,
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": true
+  },
+  "formatFiles.runOrganizeImports": true,
+  "files.associations": {
+    "*.sh": "shellscript"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "terminal.integrated.tabs.location": "left",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "workbench.editor.enablePreview": false,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false,
+    "python": true
+  },
+  "github.copilot.advanced": {},
+  "editor.accessibilitySupport": "off"
+}

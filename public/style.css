@@ -5,8 +5,22 @@
 }
 
 body {
-  font-family: "Inter";
+  font-family: 'Inter';
   overflow-x: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ededed;
+}
+
+.editor-container {
+  width: 90vw;
+  height: 90vh;
 }
 
 .container {
@@ -334,7 +348,7 @@ body {
 
 .content-wrapper
   .config-table
-  .uploaded-img[data-image-editor-active-image=""] {
+  .uploaded-img[data-image-editor-active-image=''] {
   border: 2px solid #3daba4;
   transition: border 250ms ease-in-out;
 }
@@ -345,7 +359,7 @@ body {
   border: 1px solid #dfe1ec;
   background-color: #ffff;
   border-radius: 4px;
-  background: url("./assets/adding-icon.png") center center;
+  background: url('./assets/adding-icon.png') center center;
   background-repeat: no-repeat;
   padding-top: 49px;
   cursor: pointer;
@@ -414,7 +428,7 @@ body {
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
@@ -430,7 +444,7 @@ body {
   top: 3px;
   width: 13px;
   height: 10px;
-  background-image: url("./assets/check-icon.png");
+  background-image: url('./assets/check-icon.png');
   background-repeat: no-repeat;
 }
 
@@ -460,7 +474,7 @@ body {
   color: #203254;
   width: 231.45px;
   -webkit-appearance: none;
-  background-image: url("./assets/arrow-icon.png");
+  background-image: url('./assets/arrow-icon.png');
   background-repeat: no-repeat;
   background-position-x: 97%;
   background-position-y: calc(20px - (8px / 2));
@@ -496,7 +510,7 @@ body {
 }
 
 .content-wrapper .img-table .editor-container .plugin-spinner:after {
-  content: " ";
+  content: ' ';
   display: block;
   border-radius: 50%;
   width: 0;
@@ -644,7 +658,7 @@ body {
 }
 
 .usage .version-buttons .js-version-btn,
-[selected-tab=""] {
+[selected-tab=''] {
   border-bottom: 3px solid #3daba4;
   padding-bottom: 9px;
   text-align: center;
@@ -702,7 +716,7 @@ body {
 .usage .versions-text {
   line-height: 17px;
   font-size: 14px;
-  font-family: "Inter";
+  font-family: 'Inter';
 }
 
 .usage .versions-text .red {
