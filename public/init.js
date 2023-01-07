@@ -27,7 +27,7 @@ import config from './demo-config';
 // const accordions = document.querySelectorAll('[data-accordion]');
 
 const useCloudimage = false;
-const { TABS } = FilerobotImageEditor;
+// const { TABS } = FilerobotImageEditor;
 
 // const EXAMPLE_CODE_TABS = {
 //   'js-code-tab': jsCodeWrapper,
@@ -41,14 +41,14 @@ const { TABS } = FilerobotImageEditor;
 //   'https://images-1307121509.cos.ap-beijing.myqcloud.com/souJpg/images/KRVmdSsRi6iJHf7NsVgVAJ.jpg',
 // ];
 
-const selectedTabs = [
-  TABS.ADJUST,
-  TABS.FINETUNE,
-  TABS.FILTERS,
-  TABS.WATERMARK,
-  TABS.ANNOTATE,
-  TABS.RESIZE,
-];
+// const selectedTabs = [
+//   TABS.ADJUST,
+//   TABS.FINETUNE,
+//   TABS.FILTERS,
+//   TABS.WATERMARK,
+//   TABS.ANNOTATE,
+//   TABS.RESIZE,
+// ];
 
 // const IMG_EDITOR_TABS = {
 //   adjust: TABS.ADJUST,
@@ -62,7 +62,7 @@ const selectedTabs = [
 const pluginConfig = {
   ...config,
   source: 'https://scaleflex.cloudimg.io/v7/demo/river.png',
-  tabsIds: selectedTabs,
+  // tabsIds: selectedTabs,
   // defaultTabId: TABS.RESIZE,
   defaultToolId: null,
   observePluginContainerSize: true,

@@ -7,6 +7,10 @@ declare const TABS = {
   WATERMARK: 'Watermark',
   ANNOTATE: 'Annotate',
   RESIZE: 'Resize',
+  AICREATION: 'AiCreation',
+  REPAIRANDCOMPLETION: 'RepairAndCompletion',
+  MATTING: 'Matting',
+  PICHIGHSCORE: 'PicHighScore',
 } as const;
 
 declare const TOOLS = {
@@ -333,6 +337,7 @@ export interface FilerobotImageEditorConfig {
   onModify?: (currentImageDesignState: imageDesignState) => void;
   useZoomPresetsMenu?: boolean;
   disableZooming?: boolean;
+  userId?: string;
 }
 
 declare const FilerobotImageEditor: FunctionComponent<FilerobotImageEditorConfig>;

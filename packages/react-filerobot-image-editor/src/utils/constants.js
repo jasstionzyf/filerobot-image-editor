@@ -15,6 +15,10 @@ export const TABS_IDS = {
   WATERMARK: 'Watermark',
   ANNOTATE: 'Annotate',
   RESIZE: 'Resize',
+  AICREATION: 'AiCreation',
+  REPAIRANDCOMPLETION: 'RepairAndCompletion',
+  MATTING: 'Matting',
+  PICHIGHSCORE: 'PicHighScore',
 };
 
 export const TOOLS_IDS = {

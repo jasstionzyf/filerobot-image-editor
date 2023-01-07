@@ -44,4 +44,24 @@ export const AVAILABLE_TABS = [
     labelKey: 'resizeTab',
     icon: Resize,
   },
+  {
+    id: TABS_IDS.AICREATION,
+    labelKey: 'aicreationTab',
+    icon: Resize,
+  },
+  {
+    id: TABS_IDS.REPAIRANDCOMPLETION,
+    labelKey: 'repairAndCompletionTab',
+    icon: Resize,
+  },
+  {
+    id: TABS_IDS.MATTING,
+    labelKey: 'mattingTab',
+    icon: Resize,
+  },
+  {
+    id: TABS_IDS.PICHIGHSCORE,
+    labelKey: 'picHighScoreTab',
+    icon: Resize,
+  },
 ];
