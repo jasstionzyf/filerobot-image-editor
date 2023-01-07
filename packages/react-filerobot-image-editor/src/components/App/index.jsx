@@ -285,11 +285,12 @@ const App = () => {
       $size={rootSize}
     >
       {isLoadingGlobally && <Spinner label={t('loading')} />}
-      {!showCanvasOnly && <Topbar />}
       {originalImage && feedback.duration !== 0 && (
         <StyledMainContent className="FIE_main-container">
           {!isPhoneScreen && !showCanvasOnly && <Tabs />}
+          <ToolsBar />
           <StyledCanvasAndTools className="FIE_editor-content">
+            {!showCanvasOnly && <Topbar />}
             <MainCanvas />
             {!showCanvasOnly &&
               (isPhoneScreen ? (
@@ -297,9 +298,7 @@ const App = () => {
                   <ToolsBar />
                   <Tabs />
                 </StyledPhoneToolsAndTabs>
-              ) : (
-                <ToolsBar />
-              ))}
+              ) : null)}
           </StyledCanvasAndTools>
         </StyledMainContent>
       )}

@@ -11,9 +11,12 @@ const StyledTopbar = styled.div`
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  height: 48px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  outline: 1px solid gold;
   ${({ reverseDirection }) =>
     reverseDirection ? 'flex-direction: row-reverse' : ''};
 

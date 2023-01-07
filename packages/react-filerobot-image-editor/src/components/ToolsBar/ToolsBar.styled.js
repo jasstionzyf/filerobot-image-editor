@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import Label from '@scaleflex/ui/core/label';
 
 const StyledToolsBar = styled.div`
-  padding: 8px 1px 0;
-  width: fit-content;
-  margin: 0 auto;
-  max-width: 99.5%;
-  max-height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2px;
+  height: 100%;
+  width: 326px;
+  outline: 1px solid red;
 
   [data-phone='true'] & {
     padding: 0;
@@ -18,8 +20,9 @@ const StyledToolsBar = styled.div`
 
 const StyledToolsBarItems = styled.div`
   display: flex;
-  align-items: center;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-y: auto;
   [data-phone='true'] & {
     background: ${({ theme }) => theme.palette['bg-primary']};
   }
@@ -32,10 +35,8 @@ const StyledToolsBarItemButton = styled.div(
     align-items: center;
     justify-content: center;
     padding: 8px;
-
-    &:not(:last-child) {
-      margin-right: 8px;
-    }
+    width: 50%;
+    min-height: 100px;
 
     &,
     * {
@@ -69,8 +70,8 @@ const StyledToolsBarItemOptionsWrapper = styled.div`
   align-items: center;
 
   ${(props) => `
-      max-height: ${props.hasChildren ? '40px' : 0};
-      margin: ${props.hasChildren ? '0 auto 8px' : 0};
+      max-height: ${props.hasChildren ? '100px' : 0};
+      margin: ${props.hasChildren ? '30px 0' : 0};
     `};
 `;
 

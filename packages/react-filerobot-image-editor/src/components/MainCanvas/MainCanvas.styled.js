@@ -11,6 +11,7 @@ const CanvasContainer = styled.div`
   overflow: hidden;
   min-height: 250px;
   flex-grow: 1;
+  outline: 1px solid skyblue;
 `;
 
 const StyledOrignalImage = styled.img`

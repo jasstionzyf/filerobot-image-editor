@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import Label from '@scaleflex/ui/core/label';
 
 const StyledTabs = styled.div`
-  padding: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  height: 100%;
   overflow-y: auto;
-  max-height: 100%;
+  outline: 1px solid blue;
 
   [data-phone='true'] & {
     display: flex;
@@ -20,6 +24,7 @@ const StyledTabItem = styled.div(
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     background: ${theme.palette['bg-primary']};
     align-items: center;
     justify-content: center;
