@@ -1,14 +1,14 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Input from '@scaleflex/ui/core/input';
-import Select from '@scaleflex/ui/core/select';
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
 
 const StyledFontFamilySelect = styled(Select)`
   width: 88px;
   margin: 0 4px;
 `;
 
-const StyledFontSizeInput = styled(Input)`
+const StyledFontSizeInput = styled(TextField)`
   width: 70px;
   margin: 0 4px;
 `;

@@ -1,6 +1,6 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 
 const StyledToolsBar = styled.div`
   display: flex;

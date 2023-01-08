@@ -1,12 +1,15 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import modalTitle from '@scaleflex/ui/core/modal-title';
+import DialogTitle from '@mui/material/DialogTitle';
 
-const StyledModalTitle = styled(modalTitle)`
-  .SfxModalTitle-LabelPrimary {
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 500;
+const StyledModalTitle = styled(DialogTitle)`
+  display: flex;
+  align-item: center;
+  font-size: 20px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+  > span {
+    margin-left: 5px;
   }
 `;
 

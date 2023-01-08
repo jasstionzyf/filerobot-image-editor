@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ArrowLeftOutline from '@scaleflex/icons/arrow-left-outline';
-import Menu from '@scaleflex/ui/core/menu';
-import MenuItem, {
-  MenuItemIcon,
-  MenuItemLabel,
-} from '@scaleflex/ui/core/menu-item';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 
 /** Internal Dependencies */
 import {
@@ -22,9 +21,9 @@ const ButtonWithMenu = ({
   onClick,
   title,
   color,
+  variant,
   menuFromBtn,
   menuItems,
-  menuPosition = 'bottom',
   arrowColor,
   disabled = false,
   className,
@@ -33,6 +32,7 @@ const ButtonWithMenu = ({
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const buttonSize = 'md';
+  const open = Boolean(anchorEl);
 
   const openMenu = (e) => {
     if (isFieButtonWithMenuMounted) {
@@ -84,10 +84,10 @@ const ButtonWithMenu = ({
       >
         <StyledMainButton
           className={`${className}-button`}
-          color={color}
+          variant={variant}
           size={buttonSize}
           title={title}
-          keepBorderRadius={!hasMenuItems}
+          // keepBorderRadius={!hasMenuItems}
           disabled={disabled}
         >
           {label}
@@ -97,6 +97,9 @@ const ButtonWithMenu = ({
             className={`${className}-menu-opener`}
             color={color}
             size={buttonSize}
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
             onClick={menuFromBtn || disabled ? undefined : openMenu}
             disabled={disabled}
           >
@@ -106,12 +109,12 @@ const ButtonWithMenu = ({
       </StyledButtonWrapper>
       {hasMenuItems && (
         <Menu
+          id="basic-menu"
           className={`${className}-menu`}
           anchorEl={anchorEl}
           onClose={closeMenu}
-          open
+          open={open}
           style={menuStyle}
-          position={menuPosition}
         >
           {menuItems.map(
             (item) =>
@@ -124,16 +127,16 @@ const ButtonWithMenu = ({
                   size={buttonSize}
                 >
                   {item.icon && (
-                    <MenuItemIcon size={buttonSize}>
+                    <ListItemIcon size={buttonSize}>
                       {typeof item.icon === 'string' ? (
                         // eslint-disable-next-line react/no-danger
                         <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                       ) : (
                         <item.icon />
                       )}
-                    </MenuItemIcon>
+                    </ListItemIcon>
                   )}
-                  <MenuItemLabel>{item.label}</MenuItemLabel>
+                  <ListItemText>{item.label}</ListItemText>
                 </MenuItem>
               ),
           )}
@@ -146,8 +149,8 @@ const ButtonWithMenu = ({
 ButtonWithMenu.defaultProps = {
   title: '',
   color: 'primary',
+  variant: 'contained',
   menuFromBtn: false,
-  menuPosition: 'bottom',
   onClick: undefined,
   disabled: false,
   arrowColor: undefined,
@@ -162,8 +165,8 @@ ButtonWithMenu.propTypes = {
   onClick: PropTypes.func,
   title: PropTypes.string,
   color: PropTypes.string,
+  variant: PropTypes.oneOf(['text', 'contained', 'outlined']),
   menuFromBtn: PropTypes.bool,
-  menuPosition: PropTypes.string,
   disabled: PropTypes.bool,
   arrowColor: PropTypes.string,
   menuStyle: PropTypes.instanceOf(Object),

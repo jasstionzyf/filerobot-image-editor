@@ -66,7 +66,7 @@ const ImageDimensionsAndDisplayToggle = () => {
       </StyledDimensionsLabel>
       <StyledSmallButton
         color="link"
-        horizontalMargin="8px"
+        // horizontalMargin="8px"
         onMouseDown={isResetted ? undefined : showOriginalImage}
         onTouchStart={isResetted ? undefined : showOriginalImage}
         disabled={isResetted}

@@ -121,8 +121,8 @@ const CropPresetsOption = ({ anchorEl, onClose }) => {
       </StyledToolsBarItemButtonLabel>
       <StyledOpenMenuButton
         className="FIE_crop-presets-opener-button"
-        color="link"
-        size="lg"
+        // color="link"
+        // size="lg"
       >
         {/* BOTTOM ARROW HTML CODE : TOP ARROW HTML CODE */}
         {anchorEl ? <>&#9652;</> : <>&#9662;</>}

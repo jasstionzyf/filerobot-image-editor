@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from '@scaleflex/ui/core/menu-item';
+import MenuItem from '@mui/material/MenuItem';
 import FontBold from '@scaleflex/icons/font-bold';
 import FontItalic from '@scaleflex/icons/font-italic';
 
@@ -43,7 +43,8 @@ const TextControls = ({ text, saveText, children }) => {
   );
 
   const changeFontFamily = useCallback(
-    (newFontFamily) => {
+    (e) => {
+      const newFontFamily = e.target.value;
       changeTextProps({
         target: { name: 'fontFamily', value: newFontFamily },
       });
@@ -132,7 +133,7 @@ const TextControls = ({ text, saveText, children }) => {
           onChange={changeFontFamily}
           value={text.fontFamily}
           placeholder={t('fontFamily')}
-          size="sm"
+          size="small"
         >
           {/* fontFamily is string or object */}
           {fonts.map((fontFamily = '') => (
@@ -151,9 +152,9 @@ const TextControls = ({ text, saveText, children }) => {
         value={text.fontSize || ''}
         name="fontSize"
         onChange={changeTextProps}
-        inputMode="numeric"
+        inputProps={{ inputMode: 'numeric', pattern: '[1-500]*' }}
         type="number"
-        size="sm"
+        size="small"
         placeholder={t('size')}
       />
       {!useCloudimage && (

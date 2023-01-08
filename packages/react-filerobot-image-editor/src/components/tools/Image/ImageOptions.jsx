@@ -1,6 +1,6 @@
 /** External Dependencies */
 import React, { useRef, useState } from 'react';
-import Button from '@scaleflex/ui/core/button';
+import Button from '@mui/material/Button';
 
 /** Internal Dependencies */
 import { useAnnotation, useStore } from 'hooks';
@@ -122,10 +122,10 @@ const ImageOptions = () => {
     <ImageControls image={image} saveImage={saveImage} t={t}>
       <Button
         className="FIE_image-tool-add-option"
-        color="secondary"
+        variant="contained"
         onClick={isLoading ? undefined : triggerUploadInput}
         disabled={isLoading}
-        size="sm"
+        size="small"
         style={{ maxHeight: 24 }}
       >
         {isLoading ? t('importing') : t('addImage')}

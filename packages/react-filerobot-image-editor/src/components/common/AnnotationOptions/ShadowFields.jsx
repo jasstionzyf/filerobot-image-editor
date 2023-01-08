@@ -1,11 +1,11 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '@scaleflex/ui/core/label';
 
 /** Internal Dependencies */
 import restrictNumber from 'utils/restrictNumber';
 import ColorInput from 'components/common/ColorInput';
+import Label from '../Label';
 import {
   StyledHeadline,
   StyledTwoColumnsContainer,
@@ -47,7 +47,7 @@ const ShadowFields = ({ annotation, updateAnnotation, t }) => {
               changeSliderValue('shadowOffsetX', val, -100, 100)
             }
             value={shadowOffsetX || 0}
-            hideTrack
+            // hideTrack
           />
         </StyledColumn>
         <StyledColumn>
@@ -60,7 +60,7 @@ const ShadowFields = ({ annotation, updateAnnotation, t }) => {
               changeSliderValue('shadowOffsetY', val, -100, 100)
             }
             value={shadowOffsetY || 0}
-            hideTrack
+            // hideTrack
           />
         </StyledColumn>
       </StyledTwoColumnsContainer>

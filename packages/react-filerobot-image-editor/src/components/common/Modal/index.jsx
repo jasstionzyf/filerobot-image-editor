@@ -1,21 +1,16 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Modal as LibModal,
-  ModalActions,
-  Button,
-  ModalContent,
-} from '@scaleflex/ui/core';
+import Dialog from '@mui/material/Dialog';
+import Button from '@mui/material/Button';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 
 /** Internal Dependencies */
 import { StyledModalTitle } from './Modal.styled';
 
-const style = { width: 300 };
-
 const Modal = ({
   title,
-  hint,
   Icon,
   onDone,
   onCancel,
@@ -23,70 +18,51 @@ const Modal = ({
   cancelLabel,
   isOpened,
   doneButtonStyle,
-  doneButtonColor = 'link',
-  cancelButtonColor = 'link',
+  doneButtonColor = 'contained',
+  cancelButtonColor = 'text',
   children,
   areButtonsDisabled,
-  zIndex,
   className,
+  ...props
 }) => {
-  const onKeyUp = (e) => {
-    if (e.key === 'Enter') {
-      onDone(e);
-    }
-  };
-
   return (
-    <LibModal
-      className={className}
-      open={isOpened}
-      onClose={onCancel}
-      style={{ ...style, zIndex }}
-      onKeyUp={onKeyUp}
-    >
-      <StyledModalTitle
-        icon={<Icon size={25} />}
-        iconShadow
-        onClose={onCancel}
-        primary={title}
-        secondary={hint}
-        variant="with-icon"
-      />
-      {children && <ModalContent>{children}</ModalContent>}
-      <ModalActions align="center">
+    <Dialog className={className} open={isOpened} onClose={onCancel} {...props}>
+      <StyledModalTitle>
+        {Icon && <Icon size={20} />}
+        <span>{title}</span>
+      </StyledModalTitle>
+      {children && <DialogContent>{children}</DialogContent>}
+      <DialogActions>
         <Button
-          color={cancelButtonColor}
+          variant={cancelButtonColor}
           onClick={onCancel}
-          size="md"
+          size="medium"
           disabled={areButtonsDisabled}
         >
           {cancelLabel}
         </Button>
         <Button
-          color={doneButtonColor}
           onClick={onDone}
-          size="md"
-          style={doneButtonStyle}
+          size="middle"
+          variant={doneButtonColor}
           disabled={areButtonsDisabled}
         >
           {doneLabel}
         </Button>
-      </ModalActions>
-    </LibModal>
+      </DialogActions>
+    </Dialog>
   );
 };
 
 Modal.defaultProps = {
-  hint: '',
   isOpened: false,
   doneLabel: 'Yes',
   cancelLabel: 'No',
-  doneButtonStyle: undefined,
-  doneButtonColor: 'link',
-  cancelButtonColor: 'link',
+  doneButtonStyle: {},
+  doneButtonColor: 'contained',
+  cancelButtonColor: 'outlined',
   children: undefined,
   areButtonsDisabled: false,
-  zIndex: undefined,
   className: undefined,
 };
 
@@ -95,16 +71,14 @@ Modal.propTypes = {
   Icon: PropTypes.instanceOf(Object).isRequired,
   onDone: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  hint: PropTypes.string,
   isOpened: PropTypes.bool,
   doneLabel: PropTypes.string,
   cancelLabel: PropTypes.string,
   doneButtonStyle: PropTypes.instanceOf(Object),
-  doneButtonColor: PropTypes.string,
-  cancelButtonColor: PropTypes.string,
+  doneButtonColor: PropTypes.oneOf(['text', 'contained', 'outlined']),
+  cancelButtonColor: PropTypes.oneOf(['text', 'contained', 'outlined']),
   children: PropTypes.node,
   areButtonsDisabled: PropTypes.bool,
-  zIndex: PropTypes.number,
   className: PropTypes.string,
 };
 

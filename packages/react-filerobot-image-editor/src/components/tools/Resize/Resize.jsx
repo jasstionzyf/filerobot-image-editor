@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@scaleflex/ui/core/button';
+import Button from '@mui/material/Button';
 import LockOutline from '@scaleflex/icons/lock-outline';
 import UnlockOutline from '@scaleflex/icons/unlock-outline';
 
@@ -14,6 +14,7 @@ import getSizeAfterRotation from 'utils/getSizeAfterRotation';
 import getZoomFitFactor from 'utils/getZoomFitFactor';
 import {
   StyledResizeWrapper,
+  StyledOperationWrapper,
   StyledResizeInput,
   StyledRatioLockIcon,
   StyledXLabel,
@@ -136,55 +137,58 @@ const Resize = ({ onChange, currentSize, hideResetButton, alignLeft }) => {
       className="FIE_resize-tool-options"
       alignLeft={alignLeft}
     >
-      <StyledResizeInput
-        className="FIE_resize-width-option"
-        value={dimensions.width}
-        name="width"
-        onChange={isManualChangeDisabled ? undefined : changeResize}
-        inputMode="numeric"
-        title={t('resizeWidthTitle')}
-        type="number"
-        size="sm"
-        placeholder="Width"
-        noLeftMargin={alignLeft}
-        disabled={isManualChangeDisabled}
-      />
-      <StyledXLabel className="FIE_resize-x-label">x</StyledXLabel>
-      <StyledResizeInput
-        className="FIE_resize-height-option"
-        value={dimensions.height}
-        name="height"
-        onChange={isManualChangeDisabled ? undefined : changeResize}
-        inputMode="numeric"
-        title={t('resizeHeightTitle')}
-        type="number"
-        size="sm"
-        placeholder="Height"
-        disabled={isManualChangeDisabled}
-      />
-      <StyledRatioLockIcon
-        className="FIE_resize-ratio-locker"
-        title={t('toggleRatioLockTitle')}
-        onClick={isManualChangeDisabled ? undefined : toggleRatioLock}
-        color="link"
-        size="sm"
-        disabled={isManualChangeDisabled}
-      >
-        {currentSize.ratioUnlocked || resize.ratioUnlocked ? (
-          <UnlockOutline color={theme.palette['icons-secondary']} />
-        ) : (
-          <LockOutline color={theme.palette['icons-secondary']} />
-        )}
-      </StyledRatioLockIcon>
+      <StyledOperationWrapper>
+        <StyledResizeInput
+          className="FIE_resize-width-option"
+          value={dimensions.width}
+          name="width"
+          onChange={isManualChangeDisabled ? undefined : changeResize}
+          inputProps={{ inputMode: 'numeric' }}
+          title={t('resizeWidthTitle')}
+          type="number"
+          size="small"
+          placeholder="Width"
+          disabled={isManualChangeDisabled}
+        />
+        <StyledXLabel className="FIE_resize-x-label">x</StyledXLabel>
+        <StyledResizeInput
+          className="FIE_resize-height-option"
+          value={dimensions.height}
+          name="height"
+          onChange={isManualChangeDisabled ? undefined : changeResize}
+          inputProps={{ inputMode: 'numeric' }}
+          title={t('resizeHeightTitle')}
+          type="number"
+          size="small"
+          placeholder="Height"
+          disabled={isManualChangeDisabled}
+        />
+        <StyledRatioLockIcon
+          className="FIE_resize-ratio-locker"
+          title={t('toggleRatioLockTitle')}
+          onClick={isManualChangeDisabled ? undefined : toggleRatioLock}
+          color="link"
+          size="small"
+          disabled={isManualChangeDisabled}
+        >
+          {currentSize.ratioUnlocked || resize.ratioUnlocked ? (
+            <UnlockOutline color={theme.palette['icons-secondary']} />
+          ) : (
+            <LockOutline color={theme.palette['icons-secondary']} />
+          )}
+        </StyledRatioLockIcon>
+      </StyledOperationWrapper>
       {!hideResetButton && (
         <Button
           className="FIE_resize-reset-button"
-          size="sm"
+          size="medium"
+          style={{ marginTop: 10, width: 200 }}
           onClick={
             isOriginalSize || isManualChangeDisabled ? undefined : resetResize
           }
           disabled={isOriginalSize || isManualChangeDisabled}
           title={t('resetSize')}
+          variant="contained"
         >
           {t('reset')}
         </Button>

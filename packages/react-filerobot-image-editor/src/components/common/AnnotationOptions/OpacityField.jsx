@@ -1,10 +1,10 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '@scaleflex/ui/core/label';
+import restrictNumber from 'utils/restrictNumber';
+import Label from '../Label';
 
 /** Internal Dependencies */
-import restrictNumber from 'utils/restrictNumber';
 import { StyledSpacedOptionFields } from './AnnotationOptions.styled';
 import Slider from '../Slider';
 

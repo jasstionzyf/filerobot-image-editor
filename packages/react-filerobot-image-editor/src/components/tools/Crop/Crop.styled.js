@@ -1,11 +1,11 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Button from '@scaleflex/ui/core/button';
-import Label from '@scaleflex/ui/core/label';
+import IconButton from '@mui/material/IconButton';
+import Label from 'components/common/Label';
 
-const StyledOpenMenuButton = styled(Button)`
-  margin: 0 0 0 6px;
-  padding: 0;
+const StyledOpenMenuButton = styled(IconButton)`
+  margin: 0 0 0 6px !important;
+  padding: 0 !important;
 `;
 
 const StyledMenuItemIcon = styled.div`

@@ -15,12 +15,19 @@ const StyledControlsWrapper = styled.div`
   margin-bottom: 8px;
 `;
 
+const StyledWatermarkGalleryWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 const StyledWatermarkGalleryItem = styled.div(
   ({ theme }) => `
+    margin: 10px 3%;
     padding: 4px;
     border: 1px solid ${theme.palette['borders-primary']};
-    width: fit-content;
+    width: 44%;
     height: 32px;
+    text-align: center;
     border-radius: 2px;
     overflow: hidden;
     cursor: pointer;
@@ -44,5 +51,6 @@ const StyledWatermarkGalleryItem = styled.div(
 export {
   StyledWatermarkWrapper,
   StyledControlsWrapper,
+  StyledWatermarkGalleryWrapper,
   StyledWatermarkGalleryItem,
 };

@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 
 /** Internal Dependencies */
 import restrictNumber from 'utils/restrictNumber';
@@ -28,7 +28,7 @@ const TextSpacingsFields = ({
       <Label>{t('letterSpacing')}</Label>
       <Slider
         annotation="px"
-        isActive={Boolean(letterSpacing)}
+        // isActive={Boolean(letterSpacing)}
         onChange={(val) => updateValue('letterSpacing', val)}
         value={letterSpacing}
         step={SLIDER_STEP}
@@ -36,7 +36,7 @@ const TextSpacingsFields = ({
       <Label>{t('lineHeight')}</Label>
       <Slider
         annotation="px"
-        isActive={Boolean(lineHeight)}
+        // isActive={Boolean(lineHeight)}
         onChange={(val) => updateValue('lineHeight', val)}
         value={lineHeight}
         step={SLIDER_STEP}

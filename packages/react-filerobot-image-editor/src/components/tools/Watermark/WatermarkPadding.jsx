@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Menu from '@scaleflex/ui/core/menu';
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 import Padding from '@scaleflex/icons/padding';
 
 /** Internal Dependencies */

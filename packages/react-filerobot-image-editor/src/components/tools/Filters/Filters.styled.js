@@ -1,5 +1,5 @@
 /** External Dependencies */
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 import { Stage } from 'react-konva';
 import styled from 'styled-components';
 

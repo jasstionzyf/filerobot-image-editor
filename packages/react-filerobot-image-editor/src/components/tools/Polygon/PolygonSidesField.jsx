@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 
 /** InternalDependencies */
 import { StyledSpacedOptionFields } from 'components/common/AnnotationOptions/AnnotationOptions.styled';

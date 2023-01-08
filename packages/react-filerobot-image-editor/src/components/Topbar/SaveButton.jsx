@@ -1,8 +1,8 @@
 /** External Dependencies */
 import React, { useEffect, useRef, useState } from 'react';
-import MenuItem from '@scaleflex/ui/core/menu-item';
+import MenuItem from '@mui/material/MenuItem';
 import SaveAs from '@scaleflex/icons/save-as';
-import Label from '@scaleflex/ui/core/label';
+import Label from 'components/common/Label';
 
 /** Internal Dependencies */
 import { useStore, useTransformedImgData } from 'hooks';
@@ -26,7 +26,7 @@ import {
 } from './Topbar.styled';
 
 const sliderStyle = { marginBottom: 16 };
-const saveButtonWrapperStyle = { width: 67 }; // 67px same width as tabs bar
+// const saveButtonWrapperStyle = { width: 67 }; // 67px same width as tabs bar
 const saveButtonMenuStyle = { marginLeft: 12 };
 
 let isFieSaveMounted = true;
@@ -56,7 +56,11 @@ const SaveButton = () => {
     },
   } = state;
   const [isModalOpened, setIsModalOpened] = useState(false);
-  const [imageFileInfo, setImageFileInfo] = useState({ quality: 0.92 });
+  const [imageFileInfo, setImageFileInfo] = useState({
+    quality: 0.92,
+    extension: '',
+    name: '',
+  });
   const transformImgFn = useTransformedImgData();
   const isQualityAcceptable = ['jpeg', 'jpg', 'webp'].includes(
     imageFileInfo.extension,
@@ -242,7 +246,7 @@ const SaveButton = () => {
         menuPosition="bottom"
         menuItems={menuItems}
         menuStyle={saveButtonMenuStyle}
-        wrapperStyle={saveButtonWrapperStyle}
+        // wrapperStyle={saveButtonWrapperStyle}
         disabled={isLoadingGlobally || isBlockerError}
       />
       {isModalOpened && (
@@ -257,27 +261,24 @@ const SaveButton = () => {
           onDone={validateInfoThenSave}
           doneLabel={t('save')}
           cancelLabel={t('cancel')}
-          doneButtonColor="primary"
           areButtonsDisabled={isLoadingGlobally}
-          zIndex={11110}
         >
           <StyledFileNameInput
             className="FIE_save-file-name-input"
             value={imageFileInfo.name}
             onChange={changeFileName}
-            size="sm"
+            size="small"
             placeholder={t('name')}
-            error={Boolean(imageFileInfo.name)}
-            focusOnMount
+            error={!imageFileInfo.name}
           />
           <StyledFileExtensionSelect
             className="FIE_save-extension-selector"
-            onChange={(ext) =>
-              setImageFileInfo({ ...imageFileInfo, extension: ext })
+            onChange={(e) =>
+              setImageFileInfo({ ...imageFileInfo, extension: e.target.value })
             }
             value={imageFileInfo.extension}
             placeholder={t('extension')}
-            size="sm"
+            size="small"
           >
             {SUPPORTED_IMAGE_TYPES.map((ext) => (
               <MenuItem key={ext} value={ext}>

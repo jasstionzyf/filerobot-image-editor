@@ -1,6 +1,6 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Slider from '@scaleflex/ui/core/slider';
+import Slider from '@mui/material/Slider';
 
 const StyledSlider = styled(Slider)`
   width: ${({ width }) => width || '100px'};
@@ -8,10 +8,15 @@ const StyledSlider = styled(Slider)`
   user-select: none;
   margin-bottom: 24px;
 
-  .SfxSlider-annotation {
-    font-size: 13px;
-    line-height: 16px;
+  // marks 距离slider位置
+  .MuiSlider-markLabel {
+    top: 15px;
   }
+
+  // .SfxSlider-annotation {
+  //   font-size: 13px;
+  //   line-height: 16px;
+  // }
 `;
 
 export { StyledSlider };

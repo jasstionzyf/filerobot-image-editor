@@ -1,11 +1,11 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '@scaleflex/ui/core/label';
 
 /** Internal Dependencies */
 import restrictNumber from 'utils/restrictNumber';
 import ColorInput from 'components/common/ColorInput';
+import Label from '../Label';
 import { StyledSpacedOptionFields } from './AnnotationOptions.styled';
 import Slider from '../Slider';
 

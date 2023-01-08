@@ -1,6 +1,6 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Label from '@scaleflex/ui/core/label';
+import Label from '../Label';
 
 const StyledOptions = styled.div`
   display: flex;

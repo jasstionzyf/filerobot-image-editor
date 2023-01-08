@@ -1,10 +1,10 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import Button from '@scaleflex/ui/core/button';
-import IconButton from '@scaleflex/ui/core/icon-button';
-import Input from '@scaleflex/ui/core/input';
-import Label from '@scaleflex/ui/core/label';
-import Select from '@scaleflex/ui/core/select';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
+import Label from 'components/common/Label';
+import Select from '@mui/material/Select';
 
 const StyledTopbar = styled.div`
   padding: 12px 12px 8px 12px;
@@ -40,7 +40,7 @@ const StyledHistoryButton = styled(IconButton)`
   align-items: center;
   width: 16px;
   height: 16px;
-  padding: 2px;
+  padding: 2px !important;
 `;
 
 const StyledDimensionsLabel = styled(Label)`
@@ -51,7 +51,7 @@ const StyledSmallButton = styled(IconButton)`
   width: 20px;
   height: 20px;
   margin: 0 ${(props) => props.horizontalMargin ?? '4px'};
-  padding: 4px;
+  padding: 4px !important;
 `;
 
 const StyledFlexCenterAlignedContainer = styled.div`
@@ -71,7 +71,7 @@ const StyledBackButtonLabel = styled.span`
 `;
 
 const StyledCloseOrBackButton = styled(IconButton)`
-  padding: 0;
+  padding: 0 !imporant;
   z-index: 111;
 `;
 
@@ -79,12 +79,12 @@ const StyledSaveButton = styled(Button)`
   padding: 4px 12px;
 `;
 
-const StyledFileNameInput = styled(Input)`
-  width: 200px;
+const StyledFileNameInput = styled(TextField)`
+  width: 170px;
 `;
 
 const StyledFileExtensionSelect = styled(Select)`
-  width: 60px;
+  width: 90px;
   margin-left: 4px;
 `;
 

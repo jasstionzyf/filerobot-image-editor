@@ -1,33 +1,39 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import IconButton from '@scaleflex/ui/core/icon-button';
-import Input from '@scaleflex/ui/core/input';
-import Label from '@scaleflex/ui/core/label';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/TextField';
 
 const StyledResizeWrapper = styled.div`
   display: flex;
-  justify-content: ${({ alignLeft }) => (alignLeft ? 'left' : 'center')};
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  padding-top: 20px;
+  width: 100%;
+`;
+
+const StyledOperationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-item: center;
 `;
 
 const StyledResizeInput = styled(Input)`
   width: 70px;
-  height: 24px;
-  margin: ${({ noLeftMargin }) => (noLeftMargin ? '8px 8px 8px 0' : '8px')};
 `;
 
 const StyledRatioLockIcon = styled(IconButton)`
   margin-right: 16px;
 `;
 
-const StyledXLabel = styled(Label)`
-  font-size: 13px;
-  line-height: 15px;
+const StyledXLabel = styled.div`
+  margin: 0 5px;
+  font-size: 14px;
+  line-height: 40px;
 `;
 
 export {
   StyledResizeWrapper,
+  StyledOperationWrapper,
   StyledResizeInput,
   StyledRatioLockIcon,
   StyledXLabel,
