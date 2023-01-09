@@ -41,13 +41,14 @@ ToolsBarItemButton.defaultProps = {
   id: undefined,
   children: null,
   label: '',
+  onClick: () => {},
 };
 
 ToolsBarItemButton.propTypes = {
   children: PropTypes.node,
   id: PropTypes.string,
   label: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   className: PropTypes.string.isRequired,
   isSelected: PropTypes.bool,
   Icon: PropTypes.oneOfType([

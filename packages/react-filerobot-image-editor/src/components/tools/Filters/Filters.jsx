@@ -3,7 +3,7 @@ import React from 'react';
 
 /** Internal Dependencies */
 import { useFilter, useStore } from 'hooks';
-import Carousel from 'components/common/Carousel';
+// import Carousel from 'components/common/Carousel';
 import FilterItem from './FilterItem';
 import { AVAILABLE_FILTERS } from './Filters.constants';
 
@@ -14,7 +14,8 @@ const Filters = () => {
   const [appliedFilter, applyFilter] = useFilter();
 
   return (
-    <Carousel className="FIE_filters" style={style}>
+    // <Carousel className="FIE_filters" style={style}>
+    <div>
       {AVAILABLE_FILTERS.map((filter) => (
         <FilterItem
           key={filter.label}
@@ -25,7 +26,8 @@ const Filters = () => {
           image={originalImage}
         />
       ))}
-    </Carousel>
+    </div>
+    // </Carousel>
   );
 };
 export default Filters;

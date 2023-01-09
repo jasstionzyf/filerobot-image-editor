@@ -1,7 +1,7 @@
 /** External Dependeices */
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from '@scaleflex/ui/core/menu-item';
+import MenuItem from '@mui/material/MenuItem';
 
 /** Internal Dependeices */
 import { StyledMenuItemIcon, StyledRatioDescription } from './Crop.styled';
@@ -14,7 +14,7 @@ const CropPresetItem = ({
   ratio,
   onClick,
   Icon,
-  isActive,
+  // isActive,
   width,
   height,
   t,
@@ -29,7 +29,11 @@ const CropPresetItem = ({
     });
 
   return (
-    <MenuItem active={isActive} onClick={handleOnClick} size="sm">
+    <MenuItem
+      // active={isActive}
+      onClick={handleOnClick}
+      size="small"
+    >
       {Icon && (
         <StyledMenuItemIcon>
           {typeof Icon === 'string' ? (
@@ -60,7 +64,7 @@ CropPresetItem.propTypes = {
   description: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired,
+  // isActive: PropTypes.bool.isRequired,
   ratio: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   disableManualResize: PropTypes.bool,
   width: PropTypes.number,

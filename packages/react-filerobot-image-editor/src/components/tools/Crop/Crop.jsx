@@ -8,6 +8,7 @@ import { useStore } from 'hooks';
 import ToolsBarItemButton from 'components/ToolsBar/ToolsBarItemButton';
 import { TOOLS_IDS } from 'utils/constants';
 import { StyledToolsBarItemButtonLabel } from 'components/ToolsBar/ToolsBar.styled';
+import { TOOLS } from 'index';
 import CropPresetsOption from './CropPresetsOption';
 
 const Crop = ({ selectTool, isSelected }) => {
@@ -28,11 +29,15 @@ const Crop = ({ selectTool, isSelected }) => {
       className="FIE_crop-tool"
       id={TOOLS_IDS.CROP}
       Icon={CropIcon}
-      onClick={selectToolAndShowPresets}
+      // onClick={selectToolAndShowPresets}
       isSelected={isSelected}
     >
       {!config[TOOLS_IDS.CROP].noPresets ? (
-        <CropPresetsOption anchorEl={anchorEl} onClose={closeCropPresets} />
+        <CropPresetsOption
+          anchorEl={anchorEl}
+          onOpen={(e) => selectToolAndShowPresets(TOOLS.CROP, e)}
+          onClose={closeCropPresets}
+        />
       ) : (
         <StyledToolsBarItemButtonLabel className="FIE_crop-tool-label">
           {t('cropTool')}

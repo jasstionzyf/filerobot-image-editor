@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Popper from '@scaleflex/ui/core/popper';
+import Popover from '@mui/material/Popover';
 
 /** Internal Dependencies */
 import { useStore } from 'hooks';
@@ -10,7 +10,7 @@ import { StyledColorPicker, StyledPickerTrigger } from './ColorInput.styled';
 
 const pinnedColorsKey = 'FIE_pinnedColors';
 
-const ColorInput = ({ position = 'top', onChange, color }) => {
+const ColorInput = ({ onChange, color }) => {
   const {
     selectionsIds = [],
     config: { annotationsCommon = {} },
@@ -77,14 +77,15 @@ const ColorInput = ({ position = 'top', onChange, color }) => {
         $color={currentColor}
         onChange={onChange}
       />
-      <Popper
+      <Popover
         className="FIE_color-picker"
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        position={position}
         onClick={togglePicker}
-        overlay
-        zIndex={11111}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
       >
         <StyledColorPicker
           onChange={changeColor}
@@ -92,19 +93,17 @@ const ColorInput = ({ position = 'top', onChange, color }) => {
           pinnedColors={pinnedColors}
           showTransparentColor
         />
-      </Popper>
+      </Popover>
     </>
   );
 };
 
 ColorInput.defaultProps = {
-  position: 'top',
   color: undefined,
 };
 
 ColorInput.propTypes = {
   onChange: PropTypes.func.isRequired,
-  position: PropTypes.string,
   color: PropTypes.string,
 };
 

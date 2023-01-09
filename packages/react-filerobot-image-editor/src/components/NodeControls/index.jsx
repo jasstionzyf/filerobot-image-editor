@@ -1,6 +1,6 @@
 /** External Dependencies */
 import React, { useEffect, useMemo, useState } from 'react';
-import IconButton from '@scaleflex/ui/core/icon-button';
+import IconButton from '@mui/material/IconButton';
 // import { DeleteOutline, Duplicate, LayerOrder } from '@scaleflex/icons';
 import DeleteOutline from '@scaleflex/icons/delete-outline';
 import Duplicate from '@scaleflex/icons/duplicate';

@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Menu from '@scaleflex/ui/core/menu';
+import Menu from '@mui/material/Menu';
 import Label from 'components/common/Label';
 import Padding from '@scaleflex/icons/padding';
 
@@ -44,7 +44,6 @@ const WatermarkPadding = ({ watermark, saveWatermark, t }) => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={closeOptionPopup}
-        position="top"
       >
         <StyledOptionPopupContent>
           <StyledSpacedOptionFields>

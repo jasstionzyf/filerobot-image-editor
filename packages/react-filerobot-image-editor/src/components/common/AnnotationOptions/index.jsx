@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import Menu from '@scaleflex/ui/core/menu';
+import Menu from '@mui/material/Menu';
 import Transparency from '@scaleflex/icons/transparency';
 import Shadow from '@scaleflex/icons/shadow';
 import Stroke from '@scaleflex/icons/stroke';
@@ -34,6 +34,8 @@ const AnnotationOptions = ({
   ...rest
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
   const [currentOption, setCurrentOption] = useState(null);
   const {
     config: { useCloudimage },
@@ -117,9 +119,8 @@ const AnnotationOptions = ({
         <Menu
           className="FIE_annotation-option-popup"
           anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
+          open={open}
           onClose={toggleOptionPopup}
-          position="top"
         >
           <StyledOptionPopupContent>
             <OptionPopupComponent

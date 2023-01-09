@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Accordion from '@scaleflex/ui/core/accordion';
+import Accordion from '@mui/material/Accordion';
 
 /** Internal Dependencies */
 import toPrecisedFloat from 'utils/toPrecisedFloat';

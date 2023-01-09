@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import Minus from '@scaleflex/icons/minus';
 import Plus from '@scaleflex/icons/plus';
-import Menu from '@scaleflex/ui/core/menu';
-import MenuItem, { MenuItemLabel } from '@scaleflex/ui/core/menu-item';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 /** Internal Dependencies */
 import { ZOOM_CANVAS } from 'actions';
@@ -123,7 +123,7 @@ const CanvasZooming = () => {
         anchorEl={zoomingMenuAnchorEl}
         onClose={toggleZoomingMenu}
         open={Boolean(zoomingMenuAnchorEl)}
-        position="bottom"
+        // position="bottom"
         className="FIE_topbar-zoom-menu"
       >
         {ZOOM_FACTORS_PRESETS.map(({ factor, labelKey, label }) => (
@@ -131,7 +131,7 @@ const CanvasZooming = () => {
             key={label || labelKey}
             onClick={() => applyZoomFactorPreset(factor)}
           >
-            <MenuItemLabel>{label ?? t(labelKey)}</MenuItemLabel>
+            {label ?? t(labelKey)}
           </MenuItem>
         ))}
       </Menu>

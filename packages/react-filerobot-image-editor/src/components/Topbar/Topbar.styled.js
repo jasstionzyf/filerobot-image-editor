@@ -61,7 +61,12 @@ const StyledFlexCenterAlignedContainer = styled.div`
     reverseDirection ? 'flex-direction: row-reverse' : ''};
 `;
 
-const StyledZoomPercentageLabel = styled(Label)`
+const StyledZoomPercentageLabel = styled.div`
+  color: rgba(118, 129, 132, 1);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
   cursor: pointer;
 `;
 

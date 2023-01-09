@@ -1,7 +1,7 @@
 /** External Dependencies */
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import Menu from '@scaleflex/ui/core/menu';
+import Menu from '@mui/material/Menu';
 
 /** Internal Dependencies */
 import { SET_CROP, SET_RESIZE, ZOOM_CANVAS } from 'actions';
@@ -12,12 +12,12 @@ import toPrecisedFloat from 'utils/toPrecisedFloat';
 import getZoomFitFactor from 'utils/getZoomFitFactor';
 import { StyledOpenMenuButton } from './Crop.styled';
 import { DEFAULT_CROP_PRESETS } from './Crop.constants';
-import CropPresetGroupsList from './CropPresetGroupsFolder';
+// import CropPresetGroupsList from './CropPresetGroupsFolder';
 import CropPresetItem from './CropPresetItem';
 
-const PREFIX_ICONS_DIMENS = { height: 16, width: 16 };
+// const PREFIX_ICONS_DIMENS = { height: 16, width: 16 };
 
-const CropPresetsOption = ({ anchorEl, onClose }) => {
+const CropPresetsOption = ({ anchorEl, onClose, onOpen }) => {
   const {
     dispatch,
     t,
@@ -78,39 +78,40 @@ const CropPresetsOption = ({ anchorEl, onClose }) => {
     ratio,
     width,
     height,
-    groups,
+    // groups,
     icon: Icon,
     disableManualResize,
-  }) =>
-    groups ? (
-      <CropPresetGroupsList
-        key={titleKey}
-        titleKey={titleKey}
-        groups={groups}
-        Icon={Icon}
-        onItemSelect={changeCropRatio}
-        prefixIconDimensions={PREFIX_ICONS_DIMENS}
-        t={t}
-        disableManualResize={disableManualResize}
-      />
-    ) : (
-      <CropPresetItem
-        key={ratio}
-        ratio={ratio ?? toPrecisedFloat(width / height)}
-        titleKey={titleKey}
-        t={t}
-        description={t(descriptionKey)}
-        Icon={Icon}
-        isActive={
-          currentRatio === (ratio ?? toPrecisedFloat(width / height)) &&
-          !ratioFolderKey
-        }
-        width={width}
-        height={height}
-        onClick={changeCropRatio}
-        disableManualResize={disableManualResize}
-      />
-    );
+  }) => (
+    // groups ? (
+    //   <CropPresetGroupsList
+    //     key={titleKey}
+    //     titleKey={titleKey}
+    //     groups={groups}
+    //     Icon={Icon}
+    //     onItemSelect={changeCropRatio}
+    //     prefixIconDimensions={PREFIX_ICONS_DIMENS}
+    //     t={t}
+    //     disableManualResize={disableManualResize}
+    //   />
+    // ) : (
+    <CropPresetItem
+      key={ratio}
+      ratio={ratio ?? toPrecisedFloat(width / height)}
+      titleKey={titleKey}
+      t={t}
+      description={t(descriptionKey)}
+      Icon={Icon}
+      isActive={
+        currentRatio === (ratio ?? toPrecisedFloat(width / height)) &&
+        !ratioFolderKey
+      }
+      width={width}
+      height={height}
+      onClick={changeCropRatio}
+      disableManualResize={disableManualResize}
+    />
+  );
+  // );
 
   const toolTitleKey = ratioTitleKey || 'cropTool';
 
@@ -123,6 +124,7 @@ const CropPresetsOption = ({ anchorEl, onClose }) => {
         className="FIE_crop-presets-opener-button"
         // color="link"
         // size="lg"
+        onClick={onOpen}
       >
         {/* BOTTOM ARROW HTML CODE : TOP ARROW HTML CODE */}
         {anchorEl ? <>&#9652;</> : <>&#9662;</>}
@@ -130,10 +132,10 @@ const CropPresetsOption = ({ anchorEl, onClose }) => {
       <Menu
         className="FIE_crop-presets-menu"
         anchorEl={anchorEl}
-        enableOverlay
+        // enableOverlay
         onClose={onClose}
         open={Boolean(anchorEl)}
-        position="top"
+        // position="top"
       >
         {allPresets.map(renderPreset)}
       </Menu>
@@ -146,6 +148,7 @@ CropPresetsOption.defaultProps = {
 };
 
 CropPresetsOption.propTypes = {
+  onOpen: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   anchorEl: PropTypes.instanceOf(HTMLElement),
 };
