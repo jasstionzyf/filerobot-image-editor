@@ -5,7 +5,7 @@ const StyledNodeControls = styled.div(
   ({ theme, top, left }) => `
   position: absolute;
   z-index: 1;
-  background: ${theme.palette['bg-secondary']};
+  background: ${theme.palette.secondary};
   border-radius: 2px;
   display: flex;
   align-items: center;

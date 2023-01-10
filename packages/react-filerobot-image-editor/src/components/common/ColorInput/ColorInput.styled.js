@@ -1,6 +1,6 @@
 /** External Dependencies */
 import styled from 'styled-components';
-import ColorPicker from '@scaleflex/ui/core/color-picker';
+import { SketchPicker } from 'react-color';
 
 const StyledPickerTrigger = styled.div.attrs(({ $color }) => ({
   style: {
@@ -10,16 +10,16 @@ const StyledPickerTrigger = styled.div.attrs(({ $color }) => ({
         : $color,
   },
 }))`
-  background: ${({ theme }) => theme.palette['icons-primary']};
+  background: #fff;
   border-radius: 2px;
   width: 24px;
   height: 24px;
-  border: 2px solid ${({ theme }) => theme.palette['borders-strong']};
+  border: 2px solid #000;
   cursor: pointer;
   box-sizing: border-box;
 `;
 
-const StyledColorPicker = styled(ColorPicker)`
+const StyledColorPicker = styled(SketchPicker)`
   max-width: 212px;
 `;
 

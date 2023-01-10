@@ -1,6 +1,6 @@
 /** External Dependencies */
 import React from 'react';
-import RotationSlider from '@scaleflex/ui/core/rotation-slider';
+import Slider from 'components/common/Slider';
 import RotationLeft from '@scaleflex/icons/rotation-left';
 import RotationRight from '@scaleflex/icons/rotation-right';
 
@@ -12,6 +12,17 @@ import getSizeAfterRotation from 'utils/getSizeAfterRotation';
 import { TOOLS_IDS } from 'utils/constants';
 import ToolsBarItemButton from 'components/ToolsBar/ToolsBarItemButton';
 
+const marks = (() => {
+  const arr = [];
+  for (let i = -180; i <= 180; i += 60) {
+    arr.push({
+      value: i,
+      label: `${i}°`,
+    });
+  }
+  return arr;
+})();
+
 const RotateOptions = () => {
   const {
     dispatch,
@@ -21,7 +32,7 @@ const RotateOptions = () => {
   } = useStore();
   const rotateConfig = config[TOOLS_IDS.ROTATE];
 
-  const changeRotation = useDebouncedCallback((_e, newRotation) => {
+  const changeRotation = useDebouncedCallback((newRotation) => {
     const rotationAngle = restrictNumber(newRotation, -180, 180);
 
     dispatch({
@@ -47,13 +58,13 @@ const RotateOptions = () => {
     }
   }, 20);
 
-  const changeRotationButtonPositive = (e) => {
+  const changeRotationButtonPositive = () => {
     const newAngle = rotation + rotateConfig.angle;
-    changeRotation(e, newAngle);
+    changeRotation(newAngle);
   };
-  const changeRotationButtonNegative = (e) => {
+  const changeRotationButtonNegative = () => {
     const newAngle = rotation - rotateConfig.angle;
-    changeRotation(e, newAngle);
+    changeRotation(newAngle);
   };
 
   if (rotateConfig.componentType === 'buttons') {
@@ -78,12 +89,15 @@ const RotateOptions = () => {
   }
 
   return (
-    <RotationSlider
+    <Slider
       className="FIE_rotate-slider"
       min={-180}
       max={180}
       value={rotation}
-      angle={rotateConfig.angle || 90}
+      step={1}
+      width="250px"
+      // angle={rotateConfig.angle || 90}
+      marks={marks}
       onChange={changeRotation}
       style={{ marginBottom: 20 }}
     />

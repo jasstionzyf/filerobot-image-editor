@@ -1,7 +1,8 @@
 /** External Dependencies */
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import ThemeProvider from '@scaleflex/ui/theme';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from 'styled-components';
 
 /** Internal Dependencies */
 import App from 'components/App';
@@ -35,10 +36,10 @@ const AssemblyPoint = (props) => {
   }
 
   const defaultAndProvidedConfigMerged = deepMerge(defaultConfig, props);
-
+  console.log(createTheme(defaultAndProvidedConfigMerged.theme));
   return (
     <React.StrictMode>
-      <ThemeProvider theme={defaultAndProvidedConfigMerged.theme}>
+      <ThemeProvider theme={createTheme(defaultAndProvidedConfigMerged.theme)}>
         <FontsFaces />
         <OverrideDefaultStyles />
         <AppProvider config={defaultAndProvidedConfigMerged}>

@@ -17,7 +17,7 @@ const StyledAppWrapper = styled.div.attrs(({ $size = {} }) => ({
   overflow: auto;
   position: relative;
   min-height: 250px;
-  background: ${({ theme }) => theme.palette['bg-secondary']};
+  // background: ${({ theme }) => theme.palette.background.default};
 `;
 
 const StyledMainContent = styled.div`

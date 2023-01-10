@@ -11,7 +11,7 @@ const StyledOptions = styled.div`
 `;
 
 const StyledOptionPopupContent = styled.div`
-  background: ${({ theme }) => theme.palette['bg-secondary']};
+  background: ${({ theme }) => theme.palette.secondary};
   box-shadow: 0px 1px 2px ${({ theme }) => theme.palette['light-shadow']};
   border-radius: 2px;
   overflow: visible;

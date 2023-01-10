@@ -44,10 +44,11 @@ const ColorInput = ({ onChange, color }) => {
     }
   };
 
-  const changeColor = (_newColorHex, rgba, newPinnedColors) => {
+  const changeColor = ({ rgb }) => {
+    const rgba = `rgb(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`;
     setCurrentColor(rgba);
     onChange(rgba);
-    changePinnedColors(newPinnedColors);
+    changePinnedColors([]);
 
     if (latestColor !== rgba) {
       dispatch({
@@ -81,7 +82,7 @@ const ColorInput = ({ onChange, color }) => {
         className="FIE_color-picker"
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        onClick={togglePicker}
+        onClose={togglePicker}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'left',
@@ -89,9 +90,8 @@ const ColorInput = ({ onChange, color }) => {
       >
         <StyledColorPicker
           onChange={changeColor}
-          defaultColor={currentColor}
+          color={currentColor}
           pinnedColors={pinnedColors}
-          showTransparentColor
         />
       </Popover>
     </>

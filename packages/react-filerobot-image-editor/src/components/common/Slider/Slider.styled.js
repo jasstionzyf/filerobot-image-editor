@@ -10,7 +10,7 @@ const StyledSlider = styled(Slider)`
 
   // marks 距离slider位置
   .MuiSlider-markLabel {
-    top: 15px;
+    top: 20px;
   }
 
   // .SfxSlider-annotation {

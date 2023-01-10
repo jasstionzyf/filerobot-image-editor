@@ -3,9 +3,6 @@ import { MIN_CROP, TABS_IDS, TOOLS_IDS } from 'utils/constants';
 
 export default {
   theme: {
-    palette: {
-      'bg-primary-active': '#ECF3FF',
-    },
     typography: {
       fontFamily: 'Roboto, Arial',
     },
@@ -95,7 +92,7 @@ export default {
   defaultSavedImageName: undefined,
   defaultSavedImageType: null,
   forceToPngInEllipticalCrop: false,
-  useBackendTranslations: true,
+  useBackendTranslations: false,
   translations: null,
   language: 'ch',
   avoidChangesNotSavedAlertOnLeave: false,
