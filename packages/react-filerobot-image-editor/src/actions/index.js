@@ -38,40 +38,6 @@ import setSaved, { SET_SAVED } from './setSaved';
 import updateState, { UPDATE_STATE } from './updateState';
 import setLatestColor, { SET_LATEST_COLOR } from './setLatestColor';
 
-export default {
-  [SET_ORIGINAL_IMAGE]: setOriginalImage,
-  [SET_FEEDBACK]: setFeedback,
-  [SHOW_LOADER]: showLoader,
-  [HIDE_LOADER]: hideLoader,
-  [CHANGE_POINTER_ICON]: changePointerIcon,
-  [SELECT_ANNOTATION]: selectAnnotation,
-  [CLEAR_ANNOTATIONS_SELECTIONS]: clearAnnotationsSelections,
-  [TOGGLE_ORIGINAL_IMAGE_DISPLAY]: toggleOriginalImageDisplay,
-  [SELECT_TAB]: selectTab,
-  [SELECT_TOOL]: selectTool,
-  [ZOOM_CANVAS]: zoomCanvas,
-  [SET_CANVAS_SIZE]: setCanvasSize,
-  [SET_SHOWN_IMAGE_DIMENSIONS]: setShownImageDimensions,
-  [ENABLE_TEXT_CONTENT_EDIT]: enableTextContentEdit,
-  [SET_LATEST_COLOR]: setLatestColor,
-  // Start of Design actions...
-  [ADD_FILTER]: addFilter,
-  [SET_FINETUNE]: setFinetune,
-  [SET_ANNOTATION]: setAnnotation,
-  [SET_CROP]: setCrop,
-  [CHANGE_ROTATION]: changeRotation,
-  [TOGGLE_FLIP]: toggleFlip,
-  [SET_RESIZE]: setResize,
-  [REMOVE_ANNOTATIONS]: removeAnnotations,
-  [DUPLICATE_ANNOTATIONS]: duplicateAnnotations,
-  // End of Design actions.
-  [UNDO]: undo,
-  [REDO]: redo,
-  [RESET]: reset,
-  [SET_SAVED]: setSaved,
-  [UPDATE_STATE]: updateState,
-};
-
 export {
   SET_ORIGINAL_IMAGE,
   SET_FEEDBACK,
@@ -104,4 +70,38 @@ export {
   RESET,
   SET_SAVED,
   UPDATE_STATE,
+};
+
+export default {
+  [SET_ORIGINAL_IMAGE]: setOriginalImage,
+  [SET_FEEDBACK]: setFeedback,
+  [SHOW_LOADER]: showLoader,
+  [HIDE_LOADER]: hideLoader,
+  [CHANGE_POINTER_ICON]: changePointerIcon,
+  [SELECT_ANNOTATION]: selectAnnotation,
+  [CLEAR_ANNOTATIONS_SELECTIONS]: clearAnnotationsSelections,
+  [TOGGLE_ORIGINAL_IMAGE_DISPLAY]: toggleOriginalImageDisplay,
+  [SELECT_TAB]: selectTab,
+  [SELECT_TOOL]: selectTool,
+  [ZOOM_CANVAS]: zoomCanvas,
+  [SET_CANVAS_SIZE]: setCanvasSize,
+  [SET_SHOWN_IMAGE_DIMENSIONS]: setShownImageDimensions,
+  [ENABLE_TEXT_CONTENT_EDIT]: enableTextContentEdit,
+  [SET_LATEST_COLOR]: setLatestColor,
+  // Start of Design actions...
+  [ADD_FILTER]: addFilter,
+  [SET_FINETUNE]: setFinetune,
+  [SET_ANNOTATION]: setAnnotation,
+  [SET_CROP]: setCrop,
+  [CHANGE_ROTATION]: changeRotation,
+  [TOGGLE_FLIP]: toggleFlip,
+  [SET_RESIZE]: setResize,
+  [REMOVE_ANNOTATIONS]: removeAnnotations,
+  [DUPLICATE_ANNOTATIONS]: duplicateAnnotations,
+  // End of Design actions.
+  [UNDO]: undo,
+  [REDO]: redo,
+  [RESET]: reset,
+  [SET_SAVED]: setSaved,
+  [UPDATE_STATE]: updateState,
 };

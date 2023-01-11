@@ -7,6 +7,7 @@ import { AppProviderOverridenValue } from 'context';
 import { SET_CANVAS_SIZE } from 'actions';
 import { useResizeObserver, useStore } from 'hooks';
 import NodeControls from 'components/NodeControls';
+import debounce from 'utils/debounce';
 import CanvasNode from './CanvasNode';
 import { CanvasContainer, StyledOrignalImage } from './MainCanvas.styled';
 
@@ -27,9 +28,10 @@ const MainCanvas = () => {
     [],
   );
 
-  const observeCanvasContainerResizing = useCallback((element) => {
-    observeResize(element, setNewCanvasSize);
-  }, []);
+  const observeCanvasContainerResizing = useCallback(
+    debounce((element) => observeResize(element, setNewCanvasSize), 0),
+    [],
+  );
 
   return (
     <CanvasContainer

@@ -1,5 +1,5 @@
 /** External Dependencies */
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from 'styled-components';
@@ -36,10 +36,13 @@ const AssemblyPoint = (props) => {
   }
 
   const defaultAndProvidedConfigMerged = deepMerge(defaultConfig, props);
-  console.log(createTheme(defaultAndProvidedConfigMerged.theme));
+  const muiTheme = useMemo(
+    () => createTheme(defaultAndProvidedConfigMerged.theme),
+    [defaultAndProvidedConfigMerged.theme],
+  );
   return (
     <React.StrictMode>
-      <ThemeProvider theme={createTheme(defaultAndProvidedConfigMerged.theme)}>
+      <ThemeProvider theme={muiTheme}>
         <FontsFaces />
         <OverrideDefaultStyles />
         <AppProvider config={defaultAndProvidedConfigMerged}>

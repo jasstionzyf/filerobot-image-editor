@@ -61,7 +61,8 @@ const useCloudimage = false;
 
 const pluginConfig = {
   ...config,
-  source: 'https://scaleflex.cloudimg.io/v7/demo/river.png',
+  source:
+    'https://img2.baidu.com/it/u=3086051727,358707063&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
   // tabsIds: selectedTabs,
   // defaultTabId: TABS.RESIZE,
   defaultToolId: null,

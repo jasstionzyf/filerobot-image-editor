@@ -36,6 +36,7 @@ const FeedbackPopup = ({ anchorOrigin }) => {
 
   return (
     <Popover
+      anchorEl={document.body}
       className="FIE_feedback-robot"
       anchorOrigin={anchorOrigin}
       transitionDuration={feedback.duration ?? 5000}
