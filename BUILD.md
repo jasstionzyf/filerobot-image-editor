@@ -67,7 +67,7 @@ export default () => (
 
 ## 注意事项
 
-不建议使用`yarn`。可能生成的`yarn.lock`有问题，第一次安装依赖成功后，跑项目时，`@mui/material`和`react-color`经常报没有安装，要手动进入`packages/react-filerobot-image-editor/`目录强制执行`yarn add @emotion/react @emotion/styled @mui/material react-color -S`才可能正常安装。
+不建议使用`yarn`。可能生成的`yarn.lock`有问题，第一次安装依赖成功后，跑项目时，`@mui/material`和`react-color`经常报没有安装，要手动进入`packages/react-filerobot-image-editor/`目录强制执行`yarn add @emotion/react @emotion/styled @mui/material react-color --peer`才可能正常安装。
 
 react 项目需要保证有以下依赖，版本可能不必须一致
 "@emotion/react": "^11.10.5",

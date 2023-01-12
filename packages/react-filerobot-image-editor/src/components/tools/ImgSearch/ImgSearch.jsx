@@ -56,7 +56,7 @@ const ImgSearch = () => {
       .then((res) => {
         if (res.result) {
           const result = JSON.parse(res.result);
-          const formateImgs = (array = []) =>
+          const formatImgs = (array = []) =>
             array.reduce(
               (arr, item, index) => {
                 arr[index % 2].imgs.push(item);
@@ -68,7 +68,7 @@ const ImgSearch = () => {
               ],
             );
 
-          setImgs(formateImgs(result?.responseItems ?? []));
+          setImgs(formatImgs(result?.responseItems ?? []));
         }
       })
       .catch(console.error);
