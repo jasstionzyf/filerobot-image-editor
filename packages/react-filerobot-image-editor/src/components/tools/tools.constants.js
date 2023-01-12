@@ -19,6 +19,7 @@ import { ArrowButton, ArrowOptions } from './Arrow';
 import { PolygonButton, PolygonOptions } from './Polygon';
 import { Resize } from './Resize';
 import { Watermark } from './Watermark';
+import { ImgSearch } from './ImgSearch';
 
 export const TOOLS_ITEMS = {
   [TOOLS_IDS.CROP]: {
@@ -117,9 +118,14 @@ export const TOOLS_ITEMS = {
     id: TOOLS_IDS.RESIZE,
     Item: Resize,
   },
+  [TOOLS_IDS.ImgSearch]: {
+    id: TOOLS_IDS.ImgSearch,
+    Item: ImgSearch,
+  },
 };
 
 export const TABS_TOOLS = {
+  [TABS_IDS.PHOTOS]: [TOOLS_IDS.ImgSearch],
   [TABS_IDS.ADJUST]: [
     TOOLS_IDS.CROP,
     TOOLS_IDS.ROTATE,

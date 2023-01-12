@@ -9,6 +9,7 @@ export const WATERMARK_ANNOTATION_ID = 'watermark';
 export const TRANSLATIONS_GRID_UUID = '353297d2-40b4-4684-a875-45a2178a8157';
 
 export const TABS_IDS = {
+  PHOTOS: 'Photos',
   FINETUNE: 'Finetune',
   FILTERS: 'Filters',
   ADJUST: 'Adjust',
@@ -46,6 +47,7 @@ export const TOOLS_IDS = {
   WATERMARK: 'Watermark',
   PEN: 'Pen',
   RESIZE: 'Resize',
+  ImgSearch: 'ImgSearch',
 };
 
 export const FLIP_DIRECTIONS = {

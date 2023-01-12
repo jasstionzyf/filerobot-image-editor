@@ -1,5 +1,5 @@
 /** External Dependencies */
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 
 /** Internal Dependencies */
 import { DesignLayer, TransformersLayer } from 'components/Layers';
@@ -29,7 +29,9 @@ const MainCanvas = () => {
   );
 
   const observeCanvasContainerResizing = useCallback(
-    debounce((element) => observeResize(element, setNewCanvasSize), 0),
+    // build后，将lib引入到react项目中，这里不通过事件循环机制延时的话会不执行observe里的回调
+    // 延时0时该项目中开发也不会执行，暂未找到具体原因，可能是observe的该dom挂载DOM树时机的问题
+    debounce((element) => observeResize(element, setNewCanvasSize), 100),
     [],
   );
 

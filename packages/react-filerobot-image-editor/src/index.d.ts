@@ -1,6 +1,7 @@
 import { FunctionComponent, RefObject } from 'react';
 
 declare const TABS = {
+  PHOTOS: 'PHOTOS',
   FINETUNE: 'Finetune',
   FILTERS: 'Filters',
   ADJUST: 'Adjust',
@@ -38,13 +39,14 @@ declare const TOOLS = {
   WATERMARK: 'Watermark',
   PEN: 'Pen',
   RESIZE: 'Resize',
+  ImgSearch: 'ImgSearch',
 } as const;
 
 // TABS_IDS
-type availableTabs = typeof TABS[keyof typeof TABS];
+type availableTabs = (typeof TABS)[keyof typeof TABS];
 
 // TOOLS_IDS
-type availableTools = typeof TOOLS[keyof typeof TOOLS];
+type availableTools = (typeof TOOLS)[keyof typeof TOOLS];
 
 type lineCap = 'butt' | 'round' | 'square';
 
@@ -338,6 +340,7 @@ export interface FilerobotImageEditorConfig {
   useZoomPresetsMenu?: boolean;
   disableZooming?: boolean;
   userId?: string;
+  imageAppApi?: string;
 }
 
 declare const FilerobotImageEditor: FunctionComponent<FilerobotImageEditorConfig>;

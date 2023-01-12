@@ -122,4 +122,5 @@ export default {
   onModify: undefined,
   useZoomPresetsMenu: true,
   disableZooming: false,
+  imageAppApi: `https://www.soujpg.com:8006/rest/image-search`,
 };

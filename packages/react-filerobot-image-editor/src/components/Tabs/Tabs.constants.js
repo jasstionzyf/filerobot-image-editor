@@ -6,12 +6,18 @@ import {
   ImageFilters,
   Watermark,
   Resize,
+  Photos,
 } from '@scaleflex/icons';
 
 /** Internal Dependencies */
 import { TABS_IDS } from 'utils/constants';
 
 export const AVAILABLE_TABS = [
+  {
+    id: TABS_IDS.PHOTOS,
+    labelKey: 'photosTab',
+    icon: Photos,
+  },
   {
     id: TABS_IDS.ADJUST,
     labelKey: 'adjustTab',

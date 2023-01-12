@@ -34,6 +34,8 @@ module.exports = {
     'react/prefer-read-only-props': 'error',
     'react/jsx-key': ['error', { checkKeyMustBeforeSpread: true }],
     'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
   },
   settings: {
     'import/resolver': {

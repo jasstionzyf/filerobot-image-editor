@@ -51,6 +51,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 1111,
       open: true,
+      https: true,
     },
     build: {
       ...(isGithubPagesBuild

@@ -15,6 +15,7 @@ export default {
   zoomInTitle: 'Zoom in',
   zoomOutTitle: 'Zoom out',
   toggleZoomMenuTitle: 'Toggle zoom menu',
+  photosTab: '图片搜索',
   adjustTab: 'Adjust',
   finetuneTab: 'Finetune',
   filtersTab: 'Filters',
