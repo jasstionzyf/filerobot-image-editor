@@ -49,6 +49,7 @@ export default defineConfig(({ mode }) => {
       isProduction && uglify(),
     ],
     server: {
+      host: '0.0.0.0',
       port: 1111,
       open: true,
       https: true,
