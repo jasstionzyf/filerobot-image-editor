@@ -35,6 +35,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.4",
     "@scaleflex/icons": "1.0.0-beta.80",
+    "@scaleflex/ui": "1.0.0-beta.80",
     "konva": "8.3.2",
     "prop-types": "15.7.2",
     "react": "18.2.0",
